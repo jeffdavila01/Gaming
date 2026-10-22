@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Finger Strike - Gesture Shooting</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><a class="brand" href="./">FINGER<span>STRIKE</span><small>NEURAL DEFENSE SYSTEM / 01</small></a><div class="live">&#9679; LOCAL VISION ENGINE</div></header>
+<main>
+ <section class="topline"><div><p class="eyebrow">YOUR HAND IS THE CONTROLLER</p><h1>Lock on. Pinch. Strike.</h1></div><button id="mute" aria-pressed="false">Sound: on</button></section>
+ <section class="arena" aria-label="Shooting game">
+  <canvas id="game" aria-label="Move your hand to select a target, pinch to shoot. Mouse Demo uses click to fire."></canvas>
+  <div class="hud"><div>SCORE<strong id="score">00000</strong></div><div>INTEGRITY<strong id="health">100%</strong></div><div>TIME<strong id="timer">01:30</strong></div><div>MAGAZINE<strong id="ammo">12 / 12</strong></div></div>
+  <div id="screen" class="screen"><div class="modal"><p id="stateLabel" class="eyebrow">SYSTEM READY</p><h2 id="title">Take your shot.</h2><p id="description">Move your hand to select a target. Auto-lock handles aiming; pinch to fire.</p><div class="actions"><button id="start" class="primary">Start Game</button><button id="demo">Mouse Demo Mode</button></div></div></div>
+  <div class="field-bottom"><span id="feedback" role="status">Awaiting input</span><span id="level">SECTOR 01</span></div>
+ </section>
+ <section class="console">
+  <div class="panel vision"><div class="panel-heading"><h3>Vision link</h3><span id="cameraStatus" role="status">Camera off</span></div><div class="preview"><video id="video" autoplay playsinline muted></video><canvas id="landmarks"></canvas><span id="handStatus">No hand detected</span></div><div class="actions"><button id="camera">Start Camera</button><button id="stopCamera">Stop Camera</button></div><label><input id="skeleton" type="checkbox" checked> Landmark overlay</label></div>
+  <div class="panel controls"><div class="panel-heading"><h3>Command guide</h3><span id="mode">HAND CONTROL</span></div><div class="guide"><div><b>&#8599;</b><span>Move your hand<small>Auto-lock / switch targets</small></span></div><div><b>&#9678;</b><span>Both hands can pinch<small>Independent triggers / shared ammo</small></span></div><div><b>&#9995;</b><span>Either palm - 0.45s<small>Reload anytime / restart after round</small></span></div><div><b>&#9994;</b><span>Closed fist - 0.7s<small>Shield - 8s cooldown</small></span></div></div><label><input id="aimAssist" type="checkbox" checked> Auto-lock: move hand left / right</label><br><label>Pinch sensitivity <input id="sensitivity" type="range" min="0.15" max="0.70" step="0.01" value="0.42"><output id="sensitivityValue">0.42</output></label><div class="actions"><button id="reload">Reload (R)</button><button id="pause">Pause</button><button id="restart">Restart</button></div><p class="hint">Open palm or R: reload even with ammo remaining. Mouse Demo: click to fire, Space shield. Esc pauses. Camera frames stay on your device.</p></div>
+ </section><p id="error" role="alert" hidden></p>
+</main><footer>FINGER STRIKE <span>90 SECONDS. STAY SHARP.</span></footer>
+<script type="module" src="script.js"></script></body></html>
